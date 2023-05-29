@@ -1,0 +1,39 @@
+.featured {
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  z-index: 1;
+}
+.featuredItem {
+  position: relative;
+  color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 250px;
+}
+.featuredImg {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* .featuredImg:hover {
+  transition: all;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+  transform: scale(1.1);
+} */
+
+.featuredTitles {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  bottom: 20px;
+  left: 20px;
+  gap: 5px;
+}
+.featuredTitles > h1,
+h2 {
+  margin: 0;
+}
