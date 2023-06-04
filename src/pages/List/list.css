@@ -28,12 +28,52 @@
 .lsItem {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 5px;
   margin-bottom: 10px;
 }
-.lsItem>label{
-  
+.lsItem > label {
+  font-size: 15px;
 }
+.lsItem > input {
+  height: 30px;
+  border: none;
+  padding: 5px;
+}
+.lsItem > span {
+  height: 30px;
+  padding: 5px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.lsItemOptions {
+  padding: 5px;
+}
+
+.lsOptionItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.lsOptionInput {
+  width: 50px;
+}
+
+.listSearch > button {
+  padding: 10px;
+  background-color: #0071c2;
+  color: white;
+  border: none;
+  width: 100%;
+  font-weight: 500;
+}
+
 .listResult {
   flex: 3;
 }
