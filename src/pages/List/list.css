@@ -18,12 +18,22 @@
   position: sticky;
   top: 10px;
 }
-.listResult {
-  flex: 3;
-}
 
 .lsTitle {
   font-size: 20px;
   color: #555;
   margin-bottom: 10px;
+}
+
+.lsItem {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+.lsItem>label{
+  
+}
+.listResult {
+  flex: 3;
 }
