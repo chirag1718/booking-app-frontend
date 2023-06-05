@@ -1,5 +1,5 @@
 import "./footer.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -47,8 +47,9 @@ const Footer = () => {
         </ul>
       </div>
       <div className="fText">
-        Made with 💖 by{" "} 
-        <Link className="f-text"
+        Made with 💖 by{" "}
+        <Link
+          className="f-text"
           to="https://github.com/chirag1718"
           target="_blank"
           rel="noopener noreferrer"
