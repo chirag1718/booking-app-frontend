@@ -11,6 +11,6 @@ body
 h1, h2{
   margin: 0;
 }
-/* body::-webkit-scrollbar {
+body::-webkit-scrollbar {
   display: none !important;
-} */
+}
