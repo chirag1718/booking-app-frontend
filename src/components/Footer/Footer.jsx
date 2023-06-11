@@ -47,7 +47,7 @@ const Footer = () => {
         </ul>
       </div>
       <div className="fText">
-        Made with 💖 by{" "}
+        Made with 💖 by
         <Link
           className="f-text"
           to="https://github.com/chirag1718"
