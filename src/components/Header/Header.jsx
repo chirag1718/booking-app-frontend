@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./header.css";
 import { useNavigate } from "react-router-dom";
 // Date range
@@ -44,9 +44,14 @@ const Header = ({ type }) => {
   const { dispatch } = useContext(SearchContext);
   const handleSearch = () => {
     navigate("/hotels", { state: { destination, dates, options } });
-    dispatch({ type: "NEW_SEARCH", payload: { destination, dates, options } });
+    dispatch({
+      type: "NEW_SEARCH",
+      payload: { destination, dates, options },
+    });
   };
-
+  const handleRegister = () => {
+    navigate("/register")
+  }
   return (
     <div className="header">
       <div
@@ -85,7 +90,7 @@ const Header = ({ type }) => {
               Get rewarded for your travels - unlock instant savings of 10% or
               more with a free Tripsy acoount
             </p>
-            <button className="headerBtn">Sign in / Register</button>
+            <button className="headerBtn" onClick={handleRegister}>Sign in / Register</button>
             {/* Search bar 👇🏻 */}
             <div className="headerSearch">
               <div className="headerSearchItem">
