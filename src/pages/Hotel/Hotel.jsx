@@ -3,19 +3,28 @@ import Navbar from "../../components/Navbar/Navbar";
 import Header from "../../components/Header/Header";
 import MailList from "../../components/MailList/MailList";
 import Footer from "../../components/Footer/Footer";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import CancelIcon from "@mui/icons-material/Cancel";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import useFetch from "../../Hooks/useFetch";
 import { useLocation } from "react-router-dom";
+import { SearchContext } from "../../Context/SearchContext";
 const Hotel = () => {
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
   const location = useLocation();
   const id = location.pathname.split("/")[2];
   const { data, loading, error } = useFetch(`/hotels/find/${id}`);
+  const { dates } = useContext(SearchContext);
+
+  const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
+  function dayDifference(date1, date2) {
+    const timeDiff = Math.abs(date2.getTime() - date1.getTime());
+    const diffDays = Math.ceil(timeDiff / MILLISECONDS_PER_DAY);
+    return diffDays;
+  }
 
   const handleOpen = (i) => {
     setSlideNumber(i);
