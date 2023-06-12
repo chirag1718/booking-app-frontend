@@ -17,6 +17,7 @@
 .logo {
   font-weight: 500;
   cursor: pointer;
+  font-size: 20px;
 }
 
 .navButton {
@@ -28,5 +29,10 @@
   background-color: transparent;
 }
 .navButton:active {
-    transform: scale(.90);
+  transform: scale(0.9);
+}
+
+.username {
+  text-transform: capitalize;
+  font-size: 20px;
 }
