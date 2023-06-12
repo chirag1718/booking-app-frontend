@@ -6,6 +6,12 @@ const Navbar = () => {
   const handleHome = () => {
     navigate("/");
   };
+  const handleLogin = () => {
+    navigate("/login");
+  };
+  const handleRegister = () => {
+    navigate("/register");
+  };
   return (
     <div className="navbar">
       <div className="navContainer">
@@ -13,8 +19,12 @@ const Navbar = () => {
           Tripsy Booking
         </span>
         <div className="navItems">
-          <button className="navButton">Resgiter</button>
-          <button className="navButton ">Login</button>
+          <button className="navButton" onClick={handleRegister}>
+            Resgiter
+          </button>
+          <button className="navButton" onClick={handleLogin}>
+            Login
+          </button>
         </div>
       </div>
     </div>
