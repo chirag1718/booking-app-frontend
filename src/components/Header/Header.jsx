@@ -14,6 +14,7 @@ import AirplanemodeActiveIcon from "@mui/icons-material/AirplanemodeActive";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import PersonIcon from "@mui/icons-material/Person";
 import { SearchContext } from "../../Context/SearchContext";
+import { AuthContext } from "../../Context/AuthContext";
 const Header = ({ type }) => {
   const navigate = useNavigate();
   const [openDate, setOpenDate] = useState(false);
@@ -50,8 +51,11 @@ const Header = ({ type }) => {
     });
   };
   const handleRegister = () => {
-    navigate("/register")
-  }
+    navigate("/register");
+  };
+
+  const { user } = useContext(AuthContext);
+
   return (
     <div className="header">
       <div
@@ -90,7 +94,12 @@ const Header = ({ type }) => {
               Get rewarded for your travels - unlock instant savings of 10% or
               more with a free Tripsy acoount
             </p>
-            <button className="headerBtn" onClick={handleRegister}>Sign in / Register</button>
+
+            {!user && (
+              <button className="headerBtn" onClick={handleRegister}>
+                Sign in / Register
+              </button>
+            )}
             {/* Search bar 👇🏻 */}
             <div className="headerSearch">
               <div className="headerSearchItem">
