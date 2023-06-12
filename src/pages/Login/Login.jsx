@@ -3,13 +3,14 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+// import Navbar from "../../components/Navbar/Navbar";
 const Login = () => {
   const navigate = useNavigate();
   const [credentials, setCredentials] = useState({
     username: undefined,
     password: undefined,
   });
-  const { user, loading, error, dispatch } = useContext(AuthContext);
+  const { loading, error, dispatch } = useContext(AuthContext);
   const handleChange = (e) => {
     setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
@@ -26,28 +27,31 @@ const Login = () => {
   };
 
   return (
-    <div className="login">
-      <div className="lContainer">
-        <input
-          className="lInput"
-          type="text"
-          placeholder="Username"
-          id="username"
-          onChange={handleChange}
-        />
-        <input
-          className="lInput"
-          type="password"
-          placeholder="Password"
-          id="password"
-          onChange={handleChange}
-        />
-        <button disabled={loading} onClick={handleLogin} className="lButton">
-          Login
-        </button>
-        {error && <span>{error.message}</span>}
+    <>
+      {/* <Navbar /> */}
+      <div className="login">
+        <div className="lContainer">
+          <input
+            className="lInput"
+            type="text"
+            placeholder="Username"
+            id="username"
+            onChange={handleChange}
+          />
+          <input
+            className="lInput"
+            type="password"
+            placeholder="Password"
+            id="password"
+            onChange={handleChange}
+          />
+          <button disabled={loading} onClick={handleLogin} className="lButton">
+            Login
+          </button>
+          {error && <span>{error.message}</span>}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
