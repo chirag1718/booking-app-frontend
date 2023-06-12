@@ -69,6 +69,7 @@
 .listSearch > button {
   padding: 10px;
   background-color: #0071c2;
+  cursor: pointer;
   color: white;
   border: none;
   width: 100%;
